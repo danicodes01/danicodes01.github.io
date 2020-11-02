@@ -1,1 +1,101 @@
-I am doing a test run. 
+<!DOCTYPE HTML>
+<html>
+    <head>
+      <title>Daniels Website</title>
+      <style>
+    body {
+        background: rgb(125, 198, 205);
+        color: rgb(45, 45, 45);
+        padding: 10px;
+        font-family: arial;
+    }
+    #all-contents {
+        max-width: 800px;
+        margin: auto;
+    }
+
+    /* navigation menu */
+    nav {
+        background: rgb(255,255,255);
+        margin: 0 auto;
+        margin-bottom: 20px;
+        display: flex;
+        padding: 10px;
+    }
+    nav h1 {
+        display: flex;
+        align-items: center;
+        color: black;
+        flex: 1;
+        margin: 0;
+    }
+    nav ul {
+        list-style-image: none;
+    }
+    nav li {
+        display: inline-block;
+        padding: 0 10px;
+    }
+    nav a {
+        text-decoration: none;
+        color: #000000;
+    }
+
+    /* main container area beneath menu */
+    main {
+        background: rgb(245, 238, 219);
+        display: flex;
+    }
+    .sidebar {
+        margin-right: 25px;
+        padding: 10px;
+    }
+    .sidebar img {
+        width: 200px;
+    }
+    .content {
+        flex: 1;
+        padding: 15px;
+    }
+    h2, h3 {
+        margin: 0px;
+    }
+</style>
+      
+    </head>
+    
+    <body>
+       <div id="all-contents"> 
+        <nav>
+          <h1>Daniels Website</h1>
+          <ul>
+        <li>
+          <a href="index.html"> Home </a>
+        </li>
+        <li>
+          <a href="portfolio.html"> Portfolio </a>
+      </li>
+    </ul>
+        </nav>
+
+        <main>
+             <div class="sidebar">
+              <img src="https://f4.bcbits.com/img/0016366568_24.jpg">
+           </div>
+
+           <div class="content">
+              <h2>Daniel Knowles</h2>
+              <p>student</p>
+              <div id="interests">
+                <h3>Interests</h3>
+                   <ul>
+                     <li>music</li>
+                     <li>writing</li>
+                     <li>coding</li>
+                   </ul>
+                    </div>
+           </div>
+        </main>
+    </div>
+    </body>
+</html>
