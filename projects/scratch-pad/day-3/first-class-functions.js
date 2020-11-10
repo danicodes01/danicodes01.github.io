@@ -14,6 +14,16 @@
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
+    //return a function with value param
+    return function(value){
+        //if the value argument is greater then the bass
+        if(value > base) {
+            return true; 
+        }else {
+            //if the value argument is less then the base 
+            return false; 
+        }
+    }
     
     
     
@@ -28,6 +38,10 @@ function createGreaterThanFilter(base) {
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
+    return function(value) {
+        if(value < base)return true; 
+        return false; 
+    }
     
     
     
@@ -41,7 +55,11 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    
+    return function(string) {
+         
+        if(string[0].toLowerCase() === startsWith.toLowerCase()) return true; 
+        return false; 
+    }; 
     
     
     
@@ -57,8 +75,13 @@ function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
     
     
+    return function(string) {
+        const lowerCaseString = string.toLowerCase(); 
+        if(lowerCaseString.charAt(lowerCaseString.length -1) === endsWith.toLowerCase()) return true; 
+         return false; 
+    }; 
     
-    
+    //or if(lowerCaseString[lowerCaseString.length - 1]) will also give you the character 
     // YOUR CODE ABOVE HERE //
 }
 
@@ -71,9 +94,13 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
+    //loop over the strings 
+    let myArr = []; 
+    for(let i = 0; i < strings.length; i++) {
+        myArr.push(modify(strings[i])) 
+    }
     
-    
-    
+    return myArr; 
     
     // YOUR CODE ABOVE HERE //
 }
@@ -89,8 +116,13 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
+ 
+    for(let i = 0; i < strings.length; i++) {
     
-    
+     if(!test(strings[i])) return false  
+    }
+     return true; 
+  
     
     
     // YOUR CODE ABOVE HERE //

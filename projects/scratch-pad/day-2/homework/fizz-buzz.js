@@ -12,8 +12,18 @@
 */
 function fizzBuzz() {
     // YOUR CODE GOES BELOW HERE //
-
-
+    // loop through the numbers one to hundred
+    // if its a multiple of 15 print "FizzBuzz"
+    // else if i is a multiple of 3 print "fizz"
+    // if i is a multiple of 5 print "Buzz"
+    // or just return i 
+for (var i = 1; i <= 100; i++) {
+    
+    if (i % 15 == 0) console.log("FizzBuzz");
+    else if (i % 3 == 0) console.log("Fizz");
+    else if (i % 5 == 0) console.log("Buzz");
+    else console.log(i);
+}
 
     // YOUR CODE GOES ABOVE HERE //
 }

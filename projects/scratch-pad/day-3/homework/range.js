@@ -23,12 +23,25 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
+    //returns an array containing all integers between the two params
+    let big = Math.max(start, end); 
+    let small = Math.min(start, end); 
     
+     var list = [];
+    for (let i = small; i <= big; i++) {
+        list.push(i);
     
-    
-    
-    // YOUR CODE GOES ABOVE HERE //
+    }
+    if(start > end) {
+        return list.reverse();  
+    }
+    else {
+        return list; 
+    }
 }
+    
+  
+    // YOUR CODE GOES ABOVE HERE //
 
 
 

@@ -35,8 +35,22 @@
 
 function greeter(hour) {
     // YOUR CODE BELOW HERE //
-    
-    
+    // use conditional statements to catagorize the times and phrases 
+    // if hour is greater or equal to 0 and hour is smaller or equal to 11
+    // console.log "good morning"
+    // etc. etc. 
+    if (hour >= 0 && hour <= 11) {
+        console.log("Good Morning!"); 
+    }
+    else if (hour >= 12 && hour <= 16) {
+        console.log("Good Afternoon!");
+    }
+    else if (hour >= 17 && hour <= 21) {
+        console.log("Good Evening!"); 
+    }
+    else if (hour >= 22 && hour <= 24) {
+        console.log("Good Night!");   
+    }
     
     
     // YOUR CODE ABOVE HERE //

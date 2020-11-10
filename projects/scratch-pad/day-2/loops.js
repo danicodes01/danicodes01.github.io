@@ -12,7 +12,11 @@
  */
 function printArrayValues(array) {
   // YOUR CODE BELOW HERE //
-  
+  // you can use a for of loop to iterate over the array
+  // consol.log values of array 
+  for(let val of array) {
+    console.log(val)
+  }
   
   
   
@@ -25,7 +29,11 @@ function printArrayValues(array) {
  */
 function printArrayValuesInReverse(array) {
   // YOUR CODE BELOW HERE //
-  
+  // loop backwards over array
+  // console.log its values 
+  for (let i = array.length -1; i >= 0; i--) {
+    console.log(array[i]); 
+  }
   
   
   
@@ -37,8 +45,16 @@ function printArrayValuesInReverse(array) {
  */
 function getObjectKeys(object) {
   // YOUR CODE BELOW HERE //
+  let keysarr = []; 
+  for (let keys in object) {
+    keysarr.push(keys)  
+    }
+    return keysarr;  
   
+   
   
+   
+  //
   
   
   // YOUR CODE ABOVE HERE //
@@ -51,7 +67,9 @@ function getObjectKeys(object) {
 function printObjectKeys(object) {
   // YOUR CODE BELOW HERE //
   
-  
+  for(let keys in object) {
+    console.log(keys); 
+  }
   
   
   // YOUR CODE ABOVE HERE //
@@ -62,8 +80,11 @@ function printObjectKeys(object) {
  */
 function getObjectValues(object) {
   // YOUR CODE BELOW HERE //
-  
-  
+  let valsArr = []; 
+  for (var val in object) {
+    valsArr.push(object[val]); 
+  }
+  return valsArr; 
   
   
   // YOUR CODE ABOVE HERE //
@@ -76,7 +97,9 @@ function getObjectValues(object) {
 function printObjectValues(object) {
   // YOUR CODE BELOW HERE //
   
-  
+  for (var vals in object) {
+    console.log(object[vals]); 
+  }
   
   
   // YOUR CODE ABOVE HERE //
@@ -87,9 +110,11 @@ function printObjectValues(object) {
  */
 function getObjectLength(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
+  let count = 0; 
+  for (let prop in object) {
+   count++ 
+  }
+  return count
   
   // YOUR CODE ABOVE HERE //
 }
@@ -100,7 +125,13 @@ function getObjectLength(object) {
  */
 function printObjectValuesInReverse(object) {
   // YOUR CODE BELOW HERE //
-  
+   //loop over object in reverse  
+   
+   let arr = Object.keys(object); 
+   for(let i = arr.length -1; i >= 0; i--) {
+     console.log(object[arr[i]]);
+     
+   }
   
   
   
