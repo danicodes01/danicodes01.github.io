@@ -91,7 +91,9 @@
     
    }
    
-   console.log ( a + b );  // this code is outside the local scope so it throws an error
+   //console.log ( a + b );  // this code is outside the local scope so it throws an error
+   
+   
    
    /**
     * 5. Closure: 
