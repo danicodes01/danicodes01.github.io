@@ -13,41 +13,51 @@
  
  let a = x;  // a is being assigned the value of x 
   
-  
+ console.log(a); // prints => 2
+ 
 /* 
  * 2. Arithmetic Operator: An arithmetic operator takes numerical values (either literals 
  * or variables) as their operands and returns a single numerical value.
- * 
- * 
- * 
+ */
+console.log( x * x ); // prints => 4 
+ 
+/* 
  * 3. Comparison Operator: Compares its operands and returns a logical value based on
- * whether the comparison is true. The operands can be numerical, string, logical, or object 
- * values. Strings are compared based on standard lexicographical ordering, using Unicode
- * values. In most cases, if the two operands are not of the same type, JavaScript attempts
- * to convert them to an appropriate type for the comparison. This behavior generally results
- * in comparing the operands numerically. The sole exceptions to type conversion within 
- * comparisons involve the === and !== operators, which perform strict equality and inequality
- * comparisons. These operators do not attempt to convert the operands to compatible types before
- * checking equality. The following table describes the comparison operators in terms of this
- * 
- * 
- * 
- * 
- * 4. Logical Operators: Typically used with Boolean (logical) values; when they are, they 
- * return a Boolean value. However, the && and || operators actually return the value of one of
- * the specified operands, so if these operators are used with non-Boolean values, they may return
- * a non-Boolean value 
- *
- *
- * 
- * 
+ * whether the comparison is true. 
+ */
+ console.log( 2 === 2); // prints => true
+ 
+ console.log( 2 === "2") // prints => false 
+ 
+ console.log( 2 == "2") // prints => true 
+ 
+/* 
+ * 4. Logical Operators: Typically used with Boolean (logical) values.  
+ */
+ 
+ //logical and
+ true && true; // true
+ false && true; // false
+ 
+ //logical or
+ true || false; // true
+ 
+ //logical not
+ !false; // true
+ !true; // false 
+
+ /*
  * 5. Unary Operator:  An operation with only one operand.
- * 
- * 
- * 
+ * unary operators include; delete, void, typof
+ */
+  
+ 
+/* 
  * 6. The conditional (ternary) operator is the only JavaScript operator that takes three operands: 
  * a condition followed by a question mark (?), then an expression to execute if the condition is truthy
- * followed by a colon (:), and finally the expression to execute if the condition is falsy. This operator
- * is frequently used as a shortcut for the if statement.
- * 
+ * followed by a colon (:), and finally the expression to execute if the condition is falsy. 
  */
+ 
+ let height = 6; 
+ 
+ let minHeight = ( height >= 4.5 ) ? "enter" : "must be taller";  // prints => "enter"  
