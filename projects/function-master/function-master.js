@@ -193,28 +193,19 @@ if (!object.friends){
 //////////////////////////////////////////////////////////////////////
 //and return a list of all the names that <name> is not friends with"
 function nonFriends(name, array) {
-    var names = [];  //list of everyone except you
-var friends = []; //list of your friends
-//loop through the array and and if array key name not equal to name push name to the array
-for(var i=0; i < array.length; i++){
-//used if and else statement to compare the values
-    if(array[i]["name"] !== name){
-        names.push(array[i]["name"]);
-    }
-    else{
-        friends = array[i]["friends"];
-    }
+//input: a name and an array of people object with friends list
+//output: an array of all names not in friends property
+let arr =[]
+for (let i = 0; i < array.length; i++){
+    //check two things:
+    //is the object equal to <name>
+    //and ignore the parametr's array
+if (array[i]['name'] === name || array[i]['friends'].includes(name)){
+   continue;
+   //if they fail both push into the return array 
+} else {arr.push(array[i]['name'])}
 }
-if(friends.length === 0 || friends === undefined || friends === null){
-    return names;
-}
-if(friends.length === names.length){
-    return [];
-}
-names = names.filter(function(item) {
-  return !friends.includes(item);
-});
-return names;
+return arr;
 }
 //////////////////////////////////////////////////////////////////////
 // Function 14 - Update Object ///////////////////////////////////////
