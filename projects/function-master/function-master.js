@@ -113,11 +113,17 @@ function welcomeMessage(object) {
 //////////////////////////////////////////////////////////////////////
 
 function profileInfo(object) {
-     let nameO = object.name;
-   let speciesO = object.species;
-   let name = nameO.charAt(0).toUpperCase() + nameO.slice(1);
-   let species = speciesO.charAt(0).toUpperCase() + speciesO.slice(1);
-   return name + ' is a ' + species;
+    //take a object with a name and a species 
+    //declare a variable that holds the objects name
+   let nameA = object.name;
+   //create a variable that holds the objects species 
+   let speciesA = object.species;
+   //name is equal to name0 capitalized 
+   let nameB = nameA.charAt(0).toUpperCase() + nameA.slice(1);
+   //species is equal to speciesA capitalized 
+   let speciesB = speciesA.charAt(0).toUpperCase() + speciesA.slice(1);
+   //return <name> is <species>
+   return `${nameB} is a ${speciesB}`;
 
 }
 
@@ -127,25 +133,41 @@ function profileInfo(object) {
 
 function maybeNoises(object) {
 
+	if(object && object.noises) {
+	    if(Array.isArray(object.noises)) {
+	        if(object.noises.length > 0) {
+	            return object.noises.join(" "); 
+	        }
+	    }
+	}
+	 return "there are no noises"; 
 }
+
+//return noieses array as "string" seperated by a space 
+
+//else return "there are no noises"
 
 //////////////////////////////////////////////////////////////////////
 // Function 10 - Has Words ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function hasWord(string, word) {
-for (let i = 0; i < string.length; i++) {
-    if (string[i].toLowerCase == word.toLowerCase) {
-        return true;
-        }
-    } return false;
+const includesWord = string.indexOf(word) != -1; 
+if(includesWord) return true; 
+return false; 
 }
+        
+  
+
+
 //////////////////////////////////////////////////////////////////////
 // Function 11 - Add Friend //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function addFriend (name, object) {
-
+//add name to the objects friends array
+object.friends.push(name); 
+return object; 
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -153,31 +175,69 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
+ /*used if and else statement to campare thye values
+ //if object key friends is equal to null or object key friends equal to undefined or object key friends
+ equal to empty or object key or object key friends includes property name returns true
+ */
+ 
+if (!object.friends){
+    return false;
+} else if (object.friends.includes(name)){
+    return true
+} return false;
 
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 13 - Non-Friends /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//and return a list of all the names that <name> is not friends with"
 function nonFriends(name, array) {
-
+    var names = [];  //list of everyone except you
+var friends = []; //list of your friends
+//loop through the array and and if array key name not equal to name push name to the array
+for(var i=0; i < array.length; i++){
+//used if and else statement to compare the values
+    if(array[i]["name"] !== name){
+        names.push(array[i]["name"]);
+    }
+    else{
+        friends = array[i]["friends"];
+    }
 }
-
+if(friends.length === 0 || friends === undefined || friends === null){
+    return names;
+}
+if(friends.length === names.length){
+    return [];
+}
+names = names.filter(function(item) {
+  return !friends.includes(item);
+});
+return names;
+}
 //////////////////////////////////////////////////////////////////////
 // Function 14 - Update Object ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
+    //Should update the property <key> on <object> with new <value>. If <key> does not exist on <object> create it."
 
+    object[key] = value;
+    return object;
 }
-
 //////////////////////////////////////////////////////////////////////
 // Function 15 - Remove Properties ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
-
+//Should remove any properties on <object> that are listed in <array>
+    //loop through the array
+    for(var i = 0; i < array.length; i++){
+        //Should take an object and an array of strings and remove the properties
+        delete object[array[i]];
+    }
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -185,8 +245,11 @@ function removeProperties(object, array) {
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
-
+      //used new set method to remove duplicates from array and return the array
+ return ([...new Set(array)]);
 }
+
+
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////

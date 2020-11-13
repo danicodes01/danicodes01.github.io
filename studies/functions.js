@@ -100,7 +100,8 @@
     * a function definition can carry in its body, references to variables in its 
     * parent scope. Function definition forms a closure around the enviroment in which
     * it was defined. So that function if called again has access to variables of its 
-    * parent scope. 
+    * parent scope. The inner most function can at any time acces any of the information
+    * in the other parts of the function. 
     */
     
     // 1. closure 
